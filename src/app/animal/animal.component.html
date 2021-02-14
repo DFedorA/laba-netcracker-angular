@@ -1,0 +1,37 @@
+<div class="animal">
+  <h4>
+    <button class="animal__block-button"  [routerLink]="['/editing',animal.id]" >Редактировать</button>
+  </h4>
+  <div class="animal__block" *ngIf="toggle;else addInfo">
+    <ul>
+      <li>Животное: {{animal.type}}</li>
+      <li>Кличка: {{animal.name}}</li>
+    </ul>
+    <button class="animal__block-button" (click)="aboutAnimal()">{{aboutAnimalButton}}</button>
+    <button class="animal__block-button remove" (click)="removeAnimal()"> Удалить </button>
+  </div>
+  <div class="animal__block">
+    <img src="{{animal.urlImg}}">
+    <div class="change_name">
+      <label for="animalName">Сменить кличку</label>
+      <input id="animalName" type="text" [ngModel]="animal.name" (ngModelChange)="onNameChange($event)">
+    </div>
+  </div>
+
+  <ng-template  #addInfo>
+    <div class="animal__block">
+      <ul>
+        <li>id: {{animal.id}}</li>
+        <li>Животное: {{animal.type}}</li>
+        <li>Кличка: {{animal.name}}</li>
+        <li>Возраст: {{animal.age}}</li>
+        <li>Пол: {{animal.sex}}</li>
+        <li>Цвет: {{animal.color}}</li>
+        <li>Вес: {{animal.weight}}</li>
+        <li>IQ: {{animal.mind}} </li>
+        <button class="animal__block-button" (click)="aboutAnimal()">{{aboutAnimalButton}}</button>
+      </ul>
+    </div>
+
+  </ng-template>
+</div>

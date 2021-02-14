@@ -1,0 +1,102 @@
+<h2>Editing page</h2>
+
+<button class="btn" routerLink="/animals">Back</button>
+
+<div class="editing__animal">
+    <form class="editing__animal__block" [formGroup]="form" (ngSubmit)="submit()" >
+      <div class="form-control">
+        <label>Тип</label>
+        <input type="text"  placeholder="Тип" [value]="animal.type" formControlName="typing">
+        <div
+          *ngIf="form.get('typing').invalid && form.get('typing').touched"
+          class="validation">
+          <small *ngIf="form.get('typing').errors.minlength">
+            Длинна должна быть не менее {{form.get('typing').errors.minlength.requiredLength}}.
+            Сейчас количество символов {{form.get('typing').errors.minlength.actualLength}}
+          </small>
+        </div>
+      </div>
+      <div class="form-control">
+        <label>Имя</label>
+        <input type="text"  placeholder="Имя" [value]="animal.name" formControlName="name">
+        <div
+          *ngIf="form.get('name').invalid && form.get('name').touched"
+          class="validation">
+          <small *ngIf="form.get('name').errors.minlength">
+            Длинна должна быть не менее {{form.get('name').errors.minlength.requiredLength}}.
+            Сейчас количество символов {{form.get('name').errors.minlength.actualLength}}
+          </small>
+        </div>      </div>
+      <div class="form-control">
+        <label>Возраст</label>
+        <input type="text"  placeholder="Возраст" [value]="animal.age" formControlName="age">
+        <div
+          *ngIf="form.get('age').invalid && form.get('age').touched"
+          class="validation">
+          <small *ngIf="form.get('age').errors.minlength">
+            Длинна должна быть не менее {{form.get('age').errors.minlength.requiredLength}}.
+            Сейчас количество символов {{form.get('age').errors.minlength.actualLength}}
+          </small>
+        </div>      </div>
+      <div class="form-control">
+        <label>Пол</label>
+        <input type="text"  placeholder="Пол" [value]="animal.sex" formControlName="sex">
+        <div
+          *ngIf="form.get('sex').invalid && form.get('sex').touched"
+          class="validation">
+          <small *ngIf="form.get('sex').errors.minlength">
+            Длинна должна быть не менее {{form.get('sex').errors.minlength.requiredLength}}.
+            Сейчас количество символов {{form.get('sex').errors.minlength.actualLength}}
+          </small>
+        </div>      </div>
+      <div class="form-control">
+        <label>Цвет</label>
+        <input type="text"  placeholder="Цвет" [value]="animal.color"  formControlName="color">
+        <div
+          *ngIf="form.get('color').invalid && form.get('color').touched"
+          class="validation">
+          <small *ngIf="form.get('color').errors.minlength">
+            Длинна должна быть не менее {{form.get('color').errors.minlength.requiredLength}}.
+            Сейчас количество символов {{form.get('color').errors.minlength.actualLength}}
+          </small>
+        </div>      </div>
+      <div class="form-control">
+        <label>Вес</label>
+        <input type="number"  placeholder="Вес" [value]="animal.weight"  formControlName="weight">
+        <div
+          *ngIf="form.get('weight').invalid && form.get('weight').touched"
+          class="validation">
+          <small *ngIf="form.get('weight').errors.minlength">
+            Длинна должна быть не менее {{form.get('weight').errors.minlength.requiredLength}}.
+            Сейчас количество символов {{form.get('weight').errors.minlength.actualLength}}
+          </small>
+        </div>      </div>
+      <div class="form-control">
+        <label>Разум</label>
+        <input type="number"  placeholder="IQ" [value]="animal.mind"  formControlName="mind">
+        <div
+          *ngIf="form.get('mind').invalid && form.get('mind').touched"
+          class="validation">
+          <small *ngIf="form.get('mind').errors.minlength">
+            Длинна должна быть не менее {{form.get('mind').errors.minlength.requiredLength}}.
+            Сейчас количество символов {{form.get('mind').errors.minlength.actualLength}}
+          </small>
+        </div>      </div>
+      <div class="form-control">
+        <label>Фото</label>
+        <input type="text"  placeholder="Фото" [value]="animal.urlImg" formControlName="urlImg">
+        <div
+          *ngIf="form.get('urlImg').invalid && form.get('urlImg').touched"
+          class="validation">
+          <small *ngIf="form.get('urlImg').errors.minlength">
+            Длинна должна быть не менее {{form.get('urlImg').errors.minlength.requiredLength}}.
+            Сейчас количество символов {{form.get('urlImg').errors.minlength.actualLength}}
+          </small>
+        </div>      </div>
+      <button class="btn" type="submit" [disabled]="form.invalid "
+      >Изменить</button>
+
+    </form>
+
+</div>
+

@@ -1,0 +1,31 @@
+.container{
+  max-width: 800px;
+  margin: 0px auto;
+  padding-top: 20px;
+}
+a, a:hover, a:active, a:focus,
+button, input, button:hover, button:active, button:focus,
+input:focus, input:active {
+  text-decoration: none;
+  outline: none;
+}
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  & h2 a{
+    color: #000;
+  }
+  & ul{
+    display: flex;
+    align-items: center;
+    color: #000;
+
+      & li{
+        margin-right: 15px;
+      }
+  }
+}
+.active{
+  color: #be373d;
+}

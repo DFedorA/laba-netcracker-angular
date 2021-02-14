@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MyApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav class="navbar">
+  <h2>
+    <a  [routerLink]="['/']">Animals</a>
+  </h2>
+  <ul>
+    <li ><a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"  [routerLink]="['/']">Home</a></li>
+    <li><a routerLinkActive="active" [routerLink]="['/animals']">Animals</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+
+</div>
+</body>
+</html>

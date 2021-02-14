@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+ul, li {
+  display: block;
+  padding: 0px;
+  margin: 0px;
+}
+.btn{
+  margin: 0px auto;
+  background-color: #e7e7e7;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.form-control {
+  display: block;
+  margin-top: 0.3rem;
+  margin-bottom: .5rem;
+
+  & label {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+  }
+
+  & input {
+    margin-bottom: 0;
+  }
+
+  & .validation {
+    color: red;
+  }
+}
+.error {
+  color: red;
+}

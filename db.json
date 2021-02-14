@@ -1,0 +1,39 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "type": "кот",
+      "name": "Peter",
+      "age": "1 год",
+      "sex": "м",
+      "color": "черный",
+      "weight": 35,
+      "mind": 15,
+      "urlImg": "https://pbs.twimg.com/profile_images/2860552311/599863b995984d1ed23580d215bca308.jpeg",
+      "typing": "кот"
+    },
+    {
+      "id": 2,
+      "type": "собака",
+      "name": "ПесяВторая",
+      "age": "3 год",
+      "sex": "м",
+      "color": "черный",
+      "weight": 15,
+      "mind": 15,
+      "urlImg": "https://i.pinimg.com/474x/4d/37/71/4d3771cdbfba75e6e8c25023585c308c.jpg"
+    },
+    {
+      "id": 3,
+      "type": "кот",
+      "name": "Китя",
+      "age": "1 год",
+      "sex": "ж",
+      "color": "бедая",
+      "weight": 55,
+      "mind": 65,
+      "urlImg": "https://pbs.twimg.com/profile_images/2860552311/599863b995984d1ed23580d215bca308.jpeg"
+    }
+  ],
+  "requests": []
+}

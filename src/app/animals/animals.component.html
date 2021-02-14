@@ -1,0 +1,40 @@
+<h1>Animals page</h1>
+
+<div>
+  <app-animals-form
+    *ngIf="!appAnimalsService.toggleDialogBtn;else noDialog"
+    (onAdd)="appAnimalsService.updateAnimals($event)"
+  >
+  </app-animals-form>
+
+</div>
+
+<p *ngIf="error; else todosBlock" class="error">{{error}}</p>
+
+
+
+<ng-template  #todosBlock>
+  <hr>
+  <button class="toggleButtonCats" (click)="appAnimalsService.toggleCats()">{{appAnimalsService.catsButton}}</button>
+  <hr>
+  <div  *ngIf="appAnimalsService.toggle;else noCat;">
+    <app-animal
+      *ngFor="let iterAnimal of appAnimalsService.animals"
+      [animal]="iterAnimal"
+      (onRemove)="appAnimalsService.removeAnimal($event)">
+    </app-animal>
+  </div>
+</ng-template>
+<ng-template   #noCat>
+  <ng-container
+    *ngFor="let iterAnimal of appAnimalsService.animals;"
+  >
+    <app-animal *ngIf="iterAnimal.type !== 'кот'" [animal]="iterAnimal"  (onRemove)="appAnimalsService.removeAnimal($event)" ></app-animal>
+  </ng-container>
+</ng-template>
+<ng-template  #noDialog>
+  <button class="toggleButtonGreen" (click)="appAnimalsService.toggleDialog()">Добавить</button>
+</ng-template>
+
+
+

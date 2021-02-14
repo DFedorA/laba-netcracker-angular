@@ -1,0 +1,119 @@
+<div class="add_animal">
+  <form class="add_animal__modal" #newAnimalForm = "ngForm">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Тип"
+      required
+      minlength="3"
+      maxlength="10"
+      [(ngModel)]="type"
+      #typeCheck="ngModel"
+      name = "type"
+    >
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Имя"
+      required
+      minlength="3"
+      maxlength="10"
+      [(ngModel)]="name"
+      #nameCheck ="ngModel"
+      name = "name"
+    >
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Возраст"
+      required
+      [(ngModel)]="age"
+      #ageCheck ="ngModel"
+      name = "age"
+    >
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Пол"
+      required
+      maxlength="5"
+      [(ngModel)]="sex"
+      #sexCheck="ngModel"
+      name = "sex"
+    >
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Цвет"
+      required
+      minlength="3"
+      maxlength="10"
+      [(ngModel)]="color"
+      #colorCheck="ngModel"
+      name = "color"
+    >
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Вес (по умолчанию 0)"
+      [(ngModel)]="weight"
+      #weightCheck="ngModel"
+      name = "weight"
+    >
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Разум (по умолчанию 0)"
+      required
+      [(ngModel)]="mind"
+      #mindCheck="ngModel"
+      name = "mind"
+    >
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Фото"
+      [(ngModel)]="urlImg"
+      name = "photo"
+    >
+    <button class="btn" (click)="addAnimal()"
+            [disabled]="!newAnimalForm.form.valid" >
+      Добавить животное
+    </button>
+    <button class="btn" (click)="appAnimalsService.toggleDialog()">Закрыть</button>
+
+    <small *ngIf="!newAnimalForm.form.valid">
+      Заполните обязательные поля: тип, имя, год, пол, цвет,IQ
+    </small>
+
+    <ul class="text-danger list-unstyled" *ngIf="typeCheck.dirty && typeCheck.invalid">
+      Заполни тип животного в соответсвие с правилами (от 3 до 10 символов)
+      <li *ngIf="typeCheck.errors.required"> Заполните тип животного </li>
+    </ul>
+    <ul class="text-danger list-unstyled" *ngIf="nameCheck.dirty && nameCheck.invalid">
+      Заполни имя животного в соответсвие с правилами (от 3 до 10 символов)
+      <li *ngIf="nameCheck.errors.required"> Заполните имя животного </li>
+    </ul>
+    <ul class="text-danger list-unstyled" *ngIf="ageCheck.dirty && ageCheck.invalid">
+      Заполни возраст животного в соответсвие с правилами
+      <li *ngIf="ageCheck.errors.required"> Заполните возраст животного </li>
+    </ul>
+    <ul class="text-danger list-unstyled" *ngIf="sexCheck.dirty && sexCheck.invalid">
+      Заполни пол животного в соответсвие с правилами
+      <li *ngIf="sexCheck.errors.required"> Заполните пол животного </li>
+    </ul>
+    <ul class="text-danger list-unstyled" *ngIf="colorCheck.dirty && colorCheck.invalid">
+      Заполни цвет животного в соответсвие с правилами (от 3 до 10 символов)
+      <li *ngIf="colorCheck.errors.required"> Заполните цвет животного </li>
+    </ul>
+    <ul class="text-danger list-unstyled" *ngIf="weightCheck.dirty && weightCheck.invalid">
+      Заполни вес животного в соответсвие с правилами
+      <li *ngIf="weightCheck.errors.required"> Заполните вес животного </li>
+    </ul>
+    <ul class="text-danger list-unstyled" *ngIf="mindCheck.dirty && mindCheck.invalid">
+      Заполни IQ животного в соответсвие с правилами
+      <li *ngIf="mindCheck.errors.required"> Заполните IQ животного </li>
+    </ul>
+  </form>
+</div>
+

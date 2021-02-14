@@ -1,0 +1,29 @@
+.editing__animal{
+  display: flex;
+  flex-wrap: wrap;
+  &__block{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  & .form-control{
+    width: 33%;
+    margin: 10px;
+
+    & input {
+      font-size: 13px;
+      padding: 6px 0 4px 10px;
+      border: 1px solid #cecece;
+      background: #F6F6f6;
+      border-radius: 8px;
+      margin: 10px 10px;
+      &.ng-invalid.ng-touched {
+        border: 1px solid red;
+      }
+      &.ng-valid.ng-touched {
+        border: 1px solid green;
+      }
+    }
+  }
+}

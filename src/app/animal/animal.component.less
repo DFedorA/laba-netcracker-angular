@@ -1,0 +1,37 @@
+
+.animal{
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  display: flex;
+  &__block{
+    width: 50%;
+    text-align: center;
+    &-button{
+      color: #fff;
+      text-decoration: none;
+      padding: .8em 1em calc(.8em + 3px);
+      border: 1px solid rgb(64,199,129);
+      background: rgb(64,199,129);
+      margin-top: 10px;
+      margin-left: 10px;
+
+      &:hover {background: rgb(53, 167, 110);}
+      &:active {background: rgb(33,147,90);}
+    }
+  }
+  h2{
+    margin-bottom: 10px;
+  }
+  h3:extend(h2){}
+  .remove{
+    border: 1px solid rgb(199, 64, 64);
+    background: rgb(199, 64, 64);
+    &:hover {background: rgb(167, 53, 76);}
+    &:active {background:rgb(167, 53, 76);}
+  }
+}
+.change_name{
+  display: flex;
+  flex-direction: column;
+}
